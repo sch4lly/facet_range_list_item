@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\facet_range_list\Plugin\facets\query_type;
+namespace Drupal\facet_range_list_item\Plugin\facets\query_type;
 
 use Drupal\facets\QueryType\QueryTypeRangeBase;
 

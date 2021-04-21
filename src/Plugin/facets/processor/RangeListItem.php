@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\facet_range_list\Plugin\facets\processor;
+namespace Drupal\facet_range_list_item\Plugin\facets\processor;
 
 use Drupal\facets\FacetInterface;
 use Drupal\Core\Form\FormStateInterface;
