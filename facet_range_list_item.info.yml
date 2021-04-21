@@ -1,7 +1,7 @@
 name: Facet Range list Item
 type: module
 description: 'Provides Custom Range option for Interger or decimal fields for facets.'
-package: Custom
+package: Search
 core_version_requirement: ^8.8 || ^9
 dependencies:
   - facets:facets
