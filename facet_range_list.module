@@ -1,0 +1,7 @@
+<?php
+/**
+ * Implements hook_facets_search_api_query_type_mapping_alter().
+ */
+function facet_range_list_facets_search_api_query_type_mapping_alter($backend_plugin_id, array &$query_types) {
+  $query_types['numeric_range'] = 'search_api_range_list';
+}
