@@ -31,7 +31,7 @@ class RangeListItem extends ProcessorPluginBase implements BuildProcessorInterfa
     $list = array_map('trim', $list);
     $list = array_filter($list, 'strlen');
 
-    foreach ($list as $position => $text) {
+    foreach ($list as $text) {
       $matches = [];
       if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
         // Trim key and value to avoid unwanted spaces issues.
@@ -66,11 +66,11 @@ class RangeListItem extends ProcessorPluginBase implements BuildProcessorInterfa
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state, FacetInterface $facet) {
     $configuration = $this->getConfiguration();
-    $description = '<p>' . t('The possible values this field can contain. Enter one value per line, in the format key|label.');
-    $description .= '<br/>' . t('The key must be numeric range. The label will be used in displaye values of facet. ex.');
-    $description .= '<br/>' . t('0-20|0-20 Minutes.');
-    $description .= '<br/>' . t('20-40|20-40 Minutes.');
-    $description .= '<br/>' . t('40-999|40+ Minutes.');
+    $description = '<p>' . $this->t('The possible values this field can contain. Enter one value per line, in the format key|label.');
+    $description .= '<br/>' . $this->t('The key must be numeric range. The label will be used in displaye values of facet. ex.');
+    $description .= '<br/>' . $this->t('0-20|0-20 Minutes.');
+    $description .= '<br/>' . $this->t('20-40|20-40 Minutes.');
+    $description .= '<br/>' . $this->t('40-999|40+ Minutes.');
     $description .= '</p>';
 
     $build['range_list'] = [
@@ -94,10 +94,10 @@ class RangeListItem extends ProcessorPluginBase implements BuildProcessorInterfa
     $list = array_filter($list, 'strlen');
 
     if (!is_array($list)) {
-      $error = t('Allowed values list: invalid input.');
+      $error = $this->t('Allowed values list: invalid input.');
     }
     else {
-      foreach ($list as $position => $text) {
+      foreach ($list as $text) {
         $matches = [];
         if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
           // Trim key and value to avoid unwanted spaces issues.
@@ -107,7 +107,7 @@ class RangeListItem extends ProcessorPluginBase implements BuildProcessorInterfa
             $range_start = trim($range_text[1]);
             $range_stop = trim($range_text[2]);
             if (!is_numeric($range_start) || !is_numeric($range_stop)) {
-              $error = t('Allowed values list: each key must be a valid integer or decimal.');
+              $error = $this->t('Allowed values list: each key must be a valid integer or decimal.');
               break;
             }
           }

@@ -5,6 +5,28 @@
  * Provides a Facets related customization.
  */
 
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function facet_range_list_item_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the facets module.
+    case 'help.page.facet_range_list_item':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This Facet Range list Item module provides the facets with dynamic range. The
+        possible values this field can contain. Enter one value per line, in the format key|label.') . '</p>';
+      $output .= '<p>' . t('For example.') . '</p>';
+      $output .= t('0-20|0-20 Minutes.') . '<br>';
+      $output .= t('0-20|0-20 Minutes.') . '<br>';
+      $output .= t('20-40|20-40 Minutes') . '</br>';
+      $output .= t('40-999|40+ Minutes') . '</br>';
+      return $output;
+  }
+}
+
 /**
  * Implements hook_facets_search_api_query_type_mapping_alter().
  */
