@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Provides a Facets related customization.
+ */
+
 /**
  * Implements hook_facets_search_api_query_type_mapping_alter().
  */

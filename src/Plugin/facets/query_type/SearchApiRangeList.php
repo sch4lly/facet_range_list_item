@@ -47,7 +47,7 @@ class SearchApiRangeList extends QueryTypeRangeBase {
   }
 
   /**
-   * Looks at the configuration for this facet
+   * Looks at the configuration for this facet.
    *
    * @return array
    *   Returns range list items in format of start => stop for all ranges.
@@ -58,7 +58,7 @@ class SearchApiRangeList extends QueryTypeRangeBase {
     $list = array_map('trim', $list);
     $list = array_filter($list, 'strlen');
 
-    foreach ($list as $position => $text) {
+    foreach ($list as $text) {
       $matches = [];
       if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
         // Trim key and value to avoid unwanted spaces issues.
