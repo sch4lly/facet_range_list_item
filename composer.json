@@ -1,0 +1,6 @@
+{
+    "name": "drupal/facet_range_list_item",
+    "description": "Provides Custom Range option for Interger or decimal fields for facets.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later"
+}
